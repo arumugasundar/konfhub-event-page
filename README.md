@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Setup
+- To instantiate a next project with tailwind css - `npx create-next-app@latest`
+- Navigate into the project folder & run the project with `npx run dev`
+- To configure shadcn/ui with the project - `npx shadcn-ui@latest init`
+- Follow the steps mentioned in [`shadcn docs`](https://ui.shadcn.com/docs/installation/next) .
+- To add a button component - `npx shadcn-ui@latest add button`
+- To enable dark/light themes - `npm install next-themes`
+- Follow the steps mentioned in [`shadcn dark mode`](https://ui.shadcn.com/docs/dark-mode/next) .
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Mock API Setup
+- Create a `data` folder in the root directory.
+- Create a `mock.ts` file inside `data` folder.
+- Place the following code snippet inside that file, to define a function to fetch data from the public API provided
 ```
+export const getMockData = async () => {
+    try{
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+        let response = await fetch("https://dev-api.konfhub.com/event/public/konfhub-frontend-evaluation-task", { method: "GET", redirect: "follow" });
+        response = await response.json();
+        return response;
+    } catch(err) {
+        console.log('error :', err?.toString());
+        return null;
+    }
+}
+```
+- Similarly, create an `api` folder inside `app` directory. 
+- Create a `mock` folder inside the `api` with a file named `route.ts` and place the following code snippet to expose an API route to fetch data.
+```
+import { getMockData } from "@/data/mock";
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+const GET = async () => {
+    const response = await getMockData();
+    return Response.json(response)
+}
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+export { GET };
+```
+- Now, we can able to send a GET request through `{domain}/api/mock` to fetch data via Postman.
