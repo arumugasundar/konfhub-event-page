@@ -34,7 +34,21 @@ export default async function Home() {
 
             <div className="w-full flex flex-wrap justify-between">
               <div className="w-full md:w-[68%] flex justify-center m-1 border-2 border-red-500"> <EventDetails /> </div>
-              <div className="w-full md:w-[28%] flex justify-center m-1 border-2 border-red-500"> <HostDetails /> </div>
+              <div className="w-full md:w-[30%] flex justify-center m-1"> 
+                <HostDetails 
+                  organiser_name={mock_data?.organiser_name ?? ''}
+                  organiser_dial_code={mock_data?.organiser_dial_code ?? ''}
+                  organiser_country_code={mock_data?.organiser_country_code ?? ''}
+                  organiser_phone={mock_data?.organiser_phone ?? ''}
+                  organiser_email={mock_data?.organiser_email ?? ''}
+                  organiser_website={mock_data?.organiser_website ?? ''}
+                  organiser_image_url={mock_data?.organiser_image_url ?? ''}
+                  organizer_twitter_url={mock_data?.organizer_twitter_url ?? ''} 
+                  organizer_linkedin_url={mock_data?.organizer_linkedin_url ?? ''}
+                  organizer_facebook_url={mock_data?.organizer_facebook_url ?? ''}
+                  organiser_info={mock_data?.organiser_info ?? ''}
+                /> 
+              </div>
             </div>
             
           </div>
