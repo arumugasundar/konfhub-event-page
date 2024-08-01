@@ -1,14 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import parse from 'html-react-parser';
-import { Facebook } from 'lucide-react';
 
 const HostDetails = ({organiser_name, organiser_dial_code, organiser_country_code, organiser_phone, organiser_email, organiser_website, organiser_image_url, organizer_twitter_url, organizer_linkedin_url, organizer_facebook_url, organiser_info }: any) => {
   return (
-    <div className="w-full flex flex-col m-1 p-1 rounded-2xl border-2 shadow-[4px_4px_20px_rgba(0,0,0,0.18)]">
+    <div className="w-full h-full lg:h-fit flex flex-col m-1 p-1 rounded-2xl border-2 shadow-[4px_4px_20px_rgba(0,0,0,0.18)]">
       <div className="w-full flex justify-between m-1 p-1">
         <div className='w-full flex'>
-          <Image src={organiser_image_url} alt="organiser_image" className="dark:bg-stone-400 dark:rounded-full" width={48} height={48} />
+          <Image src={organiser_image_url} alt="organiser_image" className="rounded-full" width={48} height={48} />
           <div className="m-1 p-1 place-content-center text-xl font-medium"> {organiser_name} </div>
         </div>
         <div className="m-1 p-1 h-8 text-stone-500 font-bold text-md border-2 rounded-md border-stone-500"> HOST </div>

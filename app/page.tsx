@@ -16,9 +16,10 @@ export default async function Home() {
         <>
           <div className="w-full flex justify-center m-1"> <Header navbar_icon={mock_data?.navbar_icon ?? ''} /> </div>
           <div className="w-[98%]">
-            <div className="w-full flex flex-wrap justify-between">
-              <div className="w-full md:w-[68%] flex justify-center m-1"> <ImageBanner event_poster_url={mock_data?.event_poster_url ?? ''} /> </div>
-              <div className="w-full md:w-[30%] flex justify-center m-1"> 
+            <div className="w-full flex flex-wrap justify-center">
+
+              <div className="w-full lg:w-[68%] flex justify-center m-1"> <ImageBanner event_poster_url={mock_data?.event_poster_url ?? ''} /> </div>
+              <div className="w-full lg:w-[30%] flex justify-center m-1"> 
                 <EventHighlights 
                   name={mock_data?.name ?? ''} 
                   event_live_link={mock_data?.event_live_link ?? ''} 
@@ -33,8 +34,12 @@ export default async function Home() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between">
-              <div className="w-full md:w-[68%] flex justify-center m-1 border-2 border-red-500"> <EventDetails /> </div>
-              <div className="w-full md:w-[30%] flex justify-center m-1"> 
+              <div className="w-full lg:w-[68%] flex justify-center m-1"> 
+                <EventDetails 
+                  description={mock_data?.description ?? ''}
+                /> 
+              </div>
+              <div className="w-full lg:w-[30%] flex justify-center m-1"> 
                 <HostDetails 
                   organiser_name={mock_data?.organiser_name ?? ''}
                   organiser_dial_code={mock_data?.organiser_dial_code ?? ''}

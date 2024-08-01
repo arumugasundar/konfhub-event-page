@@ -12,7 +12,10 @@ const fontSans = FontSans({
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <link rel="icon" type="image/ico" href="https://media.konfhub.com/default-icons/favicon.ico" />
+      </head>
+      
       <body className={cn("bg-background font-sans antialiased", fontSans.variable )} > 
         <ThemeProvider
           attribute="class"

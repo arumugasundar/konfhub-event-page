@@ -35,7 +35,9 @@ const EventHighlights = ({ name, event_live_link, event_website, start_date, sta
       
       <div className='flex m-1 p-1 text-base'>
         <div className="m-1 p-1"> Event starts in </div>
-        <div className="m-1 p-1">  <CountdownTimer date={start_date} time={start_time} /> </div>
+        <div className="m-1 p-1">  
+          <CountdownTimer date={start_date} time={start_time} /> 
+        </div>
       </div>
 
       <div className='w-full flex m-1 p-1 text-md'>

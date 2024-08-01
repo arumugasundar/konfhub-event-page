@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { DateTime } from 'luxon';
 
 const CountdownTimer = ({ date, time }: any) => {
 
-    const dateTime = DateTime.fromISO(`${date}T${time}`)
+    // const dateTime = DateTime.fromISO(`${date}T${time}`)
+    const dateTime = React.useMemo(() => DateTime.fromISO(`${date}T${time}`), [date, time]);
 
     const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
