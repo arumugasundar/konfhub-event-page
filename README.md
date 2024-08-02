@@ -1,3 +1,13 @@
+## Project Description
+   This next.js Application is an attempt to mimic konfhub's event page with few improvemnts in UI. As per this current state of repository, components to show image banner, event highlights & host details were build. Also some initial works were done on the tab view for event details component within the stipulated time.
+
+## Technologies Used
+- Next.js, Tailwind CSS, Shadcn/ui
+
+## To run this project locally
+- To install all the dependencies - `npm install`.
+- To run the project - `npm run dev`.
+
 ## Project Setup
 - To instantiate a next project with tailwind css - `npx create-next-app@latest`
 - Navigate into the project folder & run the project with `npx run dev`
