@@ -1,5 +1,5 @@
 # Use an official node runtime as a parent image
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 # Set the working directory
 WORKDIR /app
@@ -29,4 +29,4 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
 # serve the build files
-CMD ["npm", "run", "preview"]
+# CMD ["npm", "run", "preview"]
